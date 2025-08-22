@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas XI.7 Askarasapta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #7e57c2;
+            --secondary: #26a69a;
+            --accent: #ff5252;
+            --light: #f5f5f5;
+            --dark: #263238;
+            --gradient: linear-gradient(135deg, #7e57c2 0%, #26a69a 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            background: var(--gradient);
+            padding: 25px;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            transform: rotate(30deg);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px 15px 15px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .image-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.1);
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .close:hover {
+            color: var(--accent);
+        }
+        
+        .caption {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .nav-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .nav-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .nav-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 80%;
+            }
+        }
+        
+        /* Animasi keren */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Efek glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Kelas XI.7 Askarasapta</h1>
+                <p class="subtitle">Squad yang solid dan penuh energi! 🔥</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </header>
+        
+        <div class="gallery">
+            <!-- Gambar 1 -->
+            <div class="gallery-item" onclick="openModal(0)">
+                <img src="https://i.ibb.co.com/s9rLvtV7/1.jpg" alt="Siswa 1" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Angga</div>
+                    <div>The Visioner</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 2 -->
+            <div class="gallery-item" onclick="openModal(1)">
+                <img src="https://i.ibb.co.com/9kLkyzwP/2.jpg" alt="Siswa 2" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Budi</div>
+                    <div>The Innovator</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 3 -->
+            <div class="gallery-item" onclick="openModal(2)">
+                <img src="https://i.ibb.co.com/4ZB4XLWc/3.jpg" alt="Siswa 3" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Citra</div>
+                    <div>The Creative Mind</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 4 -->
+            <div class="gallery-item" onclick="openModal(3)">
+                <img src="https://i.ibb.co.com/WWj0Zw2y/4.jpg" alt="Siswa 4" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Dewi</div>
+                    <div>The Analyst</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 5 -->
+            <div class="gallery-item" onclick="openModal(4)">
+                <img src="https://i.ibb.co.com/XfL4c0DF/5.jpg" alt="Siswa 5" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Eko</div>
+                    <div>The Problem Solver</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 6 -->
+            <div class="gallery-item" onclick="openModal(5)">
+                <img src="https://i.ibb.co.com/PzttmffW/6.jpg" alt="Siswa 6" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Fira</div>
+                    <div>The Communicator</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 7 -->
+            <div class="gallery-item" onclick="openModal(6)">
+                <img src="https://i.ibb.co.com/yn77TBJW/7.jpg" alt="Siswa 7" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Guntur</div>
+                    <div>The Leader</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 8 -->
+            <div class="gallery-item" onclick="openModal(7)">
+                <img src="https://i.ibb.co.com/5gpZp0ZH/8.jpg" alt="Siswa 8" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Hana</div>
+                    <div>The Organizer</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 9 -->
+            <div class="gallery-item" onclick="openModal(8)">
+                <img src="https://i.ibb.co.com/Q7Mr6XHL/9.jpg" alt="Siswa 9" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Ivan</div>
+                    <div>The Tech Guru</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 10 -->
+            <div class="gallery-item" onclick="openModal(9)">
+                <img src="https://i.ibb.co.com/bgfkJgJ8/10.jpg" alt="Siswa 10" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Jasmine</div>
+                    <div>The Artist</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 11 -->
+            <div class="gallery-item" onclick="openModal(10)">
+                <img src="https://i.ibb.co.com/93Y01RMP/11.jpg" alt="Siswa 11" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Kevin</div>
+                    <div>The Researcher</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 12 -->
+            <div class="gallery-item" onclick="openModal(11)">
+                <img src="https://i.ibb.co.com/ZR2H47xH/12.jpg" alt="Siswa 12" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Luna</div>
+                    <div>The Motivator</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 13 -->
+            <div class="gallery-item" onclick="openModal(12)">
+                <img src="https://i.ibb.co.com/DPsmvDGS/13.jpg" alt="Siswa 13" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Miko</div>
+                    <div>The Strategist</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 14 -->
+            <div class="gallery-item" onclick="openModal(13)">
+                <img src="https://i.ibb.co.com/wrYp3Lpn/14.jpg" alt="Siswa 14" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Nina</div>
+                    <div>The Diplomat</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 15 -->
+            <div class="gallery-item" onclick="openModal(14)">
+                <img src="https://i.ibb.co.com/TDMyNcCh/15.jpg" alt="Siswa 15" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Oscar</div>
+                    <div>The Presenter</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 16 -->
+            <div class="gallery-item" onclick="openModal(15)">
+                <img src="https://i.ibb.co.com/PZkbCc7Z/16.jpg" alt="Siswa 16" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Putri</div>
+                    <div>The Designer</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 17 -->
+            <div class="gallery-item" onclick="openModal(16)">
+                <img src="https://i.ibb.co.com/p6yNgCLr/17.jpg" alt="Siswa 17" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Rafi</div>
+                    <div>The Analyst</div>
+                </div>
+            </div>
+            
+            <!-- Gambar 18 -->
+            <div class="gallery-item" onclick="openModal(17)">
+                <img src="https://i.ibb.co.com/zH8V9PCB/18.jpg" alt="Siswa 18" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Sari</div>
+                    <div>The Writer</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i> Scroll to Top
+            </button>
+            <button class="nav-btn" onclick="shareGallery()">
+                <i class="fas fa-share-alt"></i> Share Gallery
+            </button>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="caption" id="modalCaption"></div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Kelas XI.7 Askarasapta - The Dream Team</p>
+        <p>Made with ❤️ using HTML, CSS, and JavaScript</p>
+    </footer>
+
+    <script>
+        // Data untuk modal
+        const imageData = [
+            { title: "Angga", description: "The Visioner - Selalu punya rencana untuk masa depan!" },
+            { title: "Budi", description: "The Innovator - Inovasi adalah napasnya." },
+            { title: "Citra", description: "The Creative Mind - Ide-idenya selalu out of the box." },
+            { title: "Dewi", description: "The Analyst - Data adalah dunianya." },
+            { title: "Eko", description: "The Problem Solver - Tidak ada masalah yang tidak bisa diselesaikan." },
+            { title: "Fira", description: "The Communicator - Jago negosiasi dan public speaking." },
+            { title: "Guntur", description: "The Leader - Pemimpin yang dilahirkan." },
+            { title: "Hana", description: "The Organizer - Semua jadi teratur berkat dirinya." },
+            { title: "Ivan", description: "The Tech Guru - Segala hal tentang teknologi." },
+            { title: "Jasmine", description: "The Artist - Seni mengalir dalam darahnya." },
+            { title: "Kevin", description: "The Researcher - Selalu ingin tahu sampai ke akar-akarnya." },
+            { title: "Luna", description: "The Motivator - Semangatnya menular kepada semua orang." },
+            { title: "Miko", description: "The Strategist - Master strategi dan perencanaan." },
+            { title: "Nina", description: "The Diplomat - Handal menyelesaikan konflik." },
+            { title: "Oscar", description: "The Presenter - Presentasinya selalu memukau." },
+            { title: "Putri", description: "The Designer - Estetika adalah keahliannya." },
+            { title: "Rafi", description: "The Analyst - Data adalah mainannya." },
+            { title: "Sari", description: "The Writer - Kata-katanya selalu menyentuh hati." }
+        ];
+        
+        let currentIndex = 0;
+        
+        function openModal(index) {
+            currentIndex = index;
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.getElementById("modalCaption");
+            
+            modal.style.display = "flex";
+            modalImg.src = document.querySelectorAll(".gallery-image")[index].src;
+            captionText.innerHTML = `<strong>${imageData[index].title}</strong> - ${imageData[index].description}`;
+            
+            document.body.style.overflow = "hidden"; // Mencegah scroll di latar belakang
+        }
+        
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+            document.body.style.overflow = "auto"; // Mengembalikan scroll
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function shareGallery() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Kelas XI.7 Askarasapta',
+                    text: 'Check out gallery keren kelas XI.7 Askarasapta!',
+                    url: window.location.href
+                })
+                .then(() => console.log('Berbagi berhasil'))
+                .catch((error) => console.log('Berbagi gagal', error));
+            } else {
+                alert("Browser tidak mendukung fitur berbagi. Silakan salin URL secara manual.");
+            }
+        }
+        
+        // Tutup modal dengan menekan ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
