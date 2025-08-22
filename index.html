@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website resmi kelas XI.7 Askarasapta SMA Negeri 1 Cluring - Portal informasi, tugas, galeri, dan kegiatan kelas">
+    <meta name="keywords" content="askarasapta, sman 1 cluring, kelas XI.7, siswa, pendidikan, banyuwangi">
+    <meta name="author" content="Kelas XI.7 Askarasapta">
+    <meta property="og:title" content="XI.7 Askarasapta • SMA Negeri 1 Cluring 2025">
+    <meta property="og:description" content="Website resmi kelas XI.7 Askarasapta SMA Negeri 1 Cluring - Portal informasi, tugas, galeri, dan kegiatan kelas">
+    <meta property="og:image" content="https://i.ibb.co.com/7MsXfrF/1-logo-kelas-256x256.webp">
+    <meta property="og:url" content="https://askarasapta.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>XI.7 Askarasapta • SMA Negeri 1 Cluring 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/7MsXfrF/1-logo-kelas-256x256.webp">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --gold: #d4af37;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.12);
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Skip to main content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            z-index: 10000;
+            text-decoration: none;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header dengan Emas & Budaya */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(67, 97, 238, 0.25);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 0 0 4px var(--gold), 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.08);
+        }
+
+        .brand-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 6px 0 0;
+        }
+
+        .brand-text p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 4px;
+        }
+
+        .brand-text p i {
+            color: var(--gold);
+        }
+
+        .live-date {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .live-date i {
+            color: var(--gold);
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a:hover::after {
+            width: 60%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            background: url('https://i.ibb.co.com/Dg61Xd3M/2-Foto-kelas-800x600.webp') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.8), rgba(63, 55, 201, 0.85));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 20px rgba(76, 201, 240, 0.35);
+        }
+
+        .cta-button.primary {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            box-shadow: none;
+            margin-left: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(76, 201, 240, 0.5);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(255,255,255,0.15);
+            border-color: var(--gold);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.7rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #555;
+            max-width: 750px;
+            margin: 0.8rem auto 0;
+            font-size: 1.05rem;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.2rem;
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold);
+        }
+
+        .card-header {
+            height: 130px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .card-header i {
+            font-size: 3.5rem;
+            opacity: 0.15;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.7rem;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+            border: 2px solid var(--gold);
+        }
+
+        .card-body {
+            padding: 1.8rem;
+        }
+
+        .card-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            color: var(--dark);
+        }
+
+        .card-body p {
+            color: #666;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* Jadwal Piket */
+        .schedule-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .schedule-day {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1rem 1.5rem;
+            transition: background 0.3s ease;
+            position: relative;
+        }
+
+        .schedule-day.active {
+            background-color: rgba(76, 201, 240, 0.1);
+        }
+
+        .schedule-day.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--accent);
+        }
+
+        .schedule-day:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-day:hover {
+            background-color: #f9f9ff;
+        }
+
+        .schedule-day h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .schedule-day h3 i {
+            color: var(--gold);
+        }
+
+        .schedule-names {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .name-tag {
+            background: linear-gradient(135deg, #f0f4ff, #e6eeff);
+            color: var(--secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e0e7ff;
+            transition: all 0.3s ease;
+        }
+
+        .name-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+            border-color: var(--gold);
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            height: 220px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        .gallery-caption h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Tugas Section */
+        .tasks-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .task-filters {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            flex-wrap: wrap;
+        }
+
+        .task-search {
+            display: flex;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .task-search input {
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border-radius: 50px;
+            border: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            width: 200px;
+        }
+
+        .task-search i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid #e0e0e0;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .tasks-list {
+            padding: 0;
+        }
+
+        .task-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s ease;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-item:hover {
+            background-color: #f9f9ff;
+        }
+
+        .task-info {
+            flex: 1;
+        }
+
+        .task-title {
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .task-subject {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-deadline {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .task-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-detail {
+            background: #e6eeff;
+            color: var(--primary);
+        }
+
+        .btn-detail:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background: #fff4e5;
+            color: var(--warning);
+        }
+
+        .status-completed {
+            background: #e6f4ea;
+            color: var(--success);
+        }
+
+        .status-urgent {
+            background: #fce8e6;
+            color: var(--danger);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #0f0f1a);
+            color: white;
+            padding: 3.5rem 0 1.8rem;
+            border-top: 3px solid var(--gold);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            position: relative;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-media {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .social-media a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .social-media a:hover {
+            background-color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            border: 2px solid var(--gold);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: linear-gradient(135deg, var(--secondary), #3a30b0);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Loading spinner for images */
+        .image-loading {
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .task-search {
+                order: -1;
+                width: 100%;
+                margin: 0 0 1rem 0;
+            }
+            
+            .task-search input {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 1.5rem;
+                right: 2rem;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                transition: right 0.4s ease;
+                z-index: 1000;
+                border-radius: 16px 0 0 16px;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            .mobile-menu-close {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.5rem;
+                color: white;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-button {
+                margin: 0.5rem 0;
+            }
+            
+            .cta-button.secondary {
+                margin-left: 0;
+            }
+            
+            .task-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .task-actions {
+                align-self: flex-end;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            
+            .brand-text h1 {
+                font-size: 1.7rem;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .task-filters {
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-brand">
+                    <img src="https://i.ibb.co.com/7MsXfrF/1-logo-kelas-256x256.webp" alt="Logo Kelas XI.7 Askarasapta" class="logo">
+                    <div class="brand-text">
+                        <h1>XI.7 Askarasapta</h1>
+                        <p><i class="fas fa-map-marker-alt"></i> SMA Negeri 1 Cluring, Banyuwangi</p>
+                    </div>
+                </div>
+                <div class="live-date">
+                    <i class="fas fa-circle"></i>
+                    <span id="current-date"></span>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <a href="#home">Home</a>
+                    <a href="#about">Tentang</a>
+                    <a href="#schedule">Jadwal Piket</a>
+                    <a href="#tasks">Tugas</a>
+                    <a href="#gallery">Galeri</a>
+                    <a href="#students">Siswa</a>
+                    <a href="#contact">Kontak</a>
+                    <a href="Alat_Konversi_Foto.html">Konversi Foto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Askarasapta: Cahaya Tujuh Jiwa</h2>
+                <p><em>"Satu untuk semangat, tujuh untuk keberagaman. Kami adalah harmoni dari bakat, budaya, dan tekad."</em> Selamat datang di kelas XI.7 – tempat prestasi dan persaudaraan bersinar.</p>
+                <div class="cta-buttons">
+                    <a href="#gallery" class="cta-button primary">
+                        <i class="fas fa-images"></i> Lihat Galeri
+                    </a>
+                    <a href="#tasks" class="cta-button secondary">
+                        <i class="fas fa-tasks"></i> Lihat Tugas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Filosofi Kelas Askarasapta</h2>
+                <p>“Askara” berarti suara, “Sapta” berarti tujuh. Kami adalah tujuh nada yang menyatu dalam satu harmoni – suara semangat, inovasi, dan integritas.</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i>
+                        <div class="card-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Profil Kelas</h3>
+                        <p>Terdiri dari 34 siswa berbakat, XI.7 Askarasapta menjunjung tinggi nilai kekeluargaan, kedisiplinan, dan kreativitas. Kami percaya bahwa kebersamaan adalah kunci sukses.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-header">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Wali Kelas</h3>
+                        <p>Bapak Alamsah, S.E., guru Ekonomi yang penuh dedikasi. Beliau tidak hanya mengajar ilmu, tetapi juga membentuk karakter dan kepemimpinan siswa.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-header">
+                        <i class="fas fa-bullseye"></i>
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Visi & Misi</h3>
+                        <p><strong>Visi:</strong> Menjadi kelas teladan dalam prestasi, akhlak, dan kontribusi sosial. <br>
+                        <strong>Misi:</strong> Mengembangkan potensi holistik melalui kolaborasi, inovasi, dan keteladanan.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-header">
+                        <i class="fas fa-camera"></i>
+                        <div class="card-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Konversi Foto</h3>
+                        <p>Alat untuk mengkonversi foto ke berbagai format. Mendukung konversi ke JPG, PNG, WebP, dan format lainnya dengan kualitas tinggi.</p>
+                        <a href="Alat_Konversi_Foto.html" class="cta-button primary" style="margin-top: 15px; display: inline-block;">
+                            <i class="fas fa-external-link-alt"></i> Buka Alat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jadwal Piket -->
+    <section class="section" id="schedule">
+        <div class="container">
+            <div class="section-title">
+                <h2>Jadwal Piket Kelas XI.7</h2>
+                <p>Setiap hari, tim piket kami menjaga kebersihan dan kerapian kelas dengan penuh tanggung jawab.</p>
+            </div>
+            <div class="schedule-container">
+                <div class="schedule-day" id="schedule-monday">
+                    <h3><i class="fas fa-calendar-day"></i> Senin</h3>
+                    <div class="schedule-names">
+                        <span class="name-tag">Amel</span>
+                        <span class="name-tag">Adi</span>
+                        <span class="name-tag">Fara</span>
+                        <span class="name-tag">Abel</span>
+                        <span class="name-tag">Diva</span>
+                        <span class="name-tag">Ayum</span>
+                        <span class="name-tag">Ayu</span>
+                    </div>
+                </div>
+                <div class="schedule-day" id="schedule-tuesday">
+                    <h3><i class="fas fa-calendar-day"></i> Selasa</h3>
+                    <div class="schedule-names">
+                        <span class="name-tag">Gilang</span>
+                        <span class="name-tag">Wulan</span>
+                        <span class="name-tag">Erni</span>
+                        <span class="name-tag">Jessica</span>
+                        <span class="name-tag">Yohana</span>
+                        <span class="name-tag">Faradilla</span>
+                        <span class="name-tag">Dana</span>
+                    </div>
+                </div>
+                <div class="schedule-day" id="schedule-wednesday">
+                    <h3><i class="fas fa-calendar-day"></i> Rabu</h3>
+                    <div class="schedule-names">
+                        <span class="name-tag">Heni</span>
+                        <span class="name-tag">Julio</span>
+                        <span class="name-tag">Qinatha</span>
+                        <span class="name-tag">Jasmin</span>
+                        <span class="name-tag">Carel</span>
+                        <span class="name-tag">Evellyn</span>
+                        <span class="name-tag">Naswa</span>
+                    </div>
+                </div>
+                <div class="schedule-day" id="schedule-thursday">
+                    <h3><i class="fas fa-calendar-day"></i> Kamis</h3>
+                    <div class="schedule-names">
+                        <span class="name-tag">Devina</span>
+                        <span class="name-tag">Kafina</span>
+                        <span class="name-tag">Bahris</span>
+                        <span class="name-tag">Rusty</span>
+                        <span class="name-tag">Kesya</span>
+                        <span class="name-tag">Jenar</span>
+                        <span class="name-tag">Adinda</span>
+                    </div>
+                </div>
+                <div class="schedule-day" id="schedule-friday">
+                    <h3><i class="fas fa-calendar-day"></i> Jum'at</h3>
+                    <div class="schedule-names">
+                        <span class="name-tag">Geby</span>
+                        <span class="name-tag">Febrizia</span>
+                        <span class="name-tag">Vinsca</span>
+                        <span class="name-tag">Vega</span>
+                        <span class="name-tag">Ivan</span>
+                        <span class="name-tag">Anisya</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tugas Section -->
+    <section class="section" id="tasks">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portal Tugas Kelas</h2>
+                <p>Pantau dan kelelola tugas-tugas sekolah dengan mudah. Jangan sampai ada yang terlewat!</p>
+            </div>
+            <div class="tasks-container">
+                <div class="task-filters">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="pending">Belum Selesai</button>
+                    <button class="filter-btn" data-filter="completed">Selesai</button>
+                    <button class="filter-btn" data-filter="urgent">Penting</button>
+                    <div class="task-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Cari tugas..." id="taskSearch">
+                    </div>
+                </div>
+                <div class="tasks-list">
+                    <div class="task-item" data-status="pending" data-priority="urgent">
+                        <div class="task-info">
+                            <div class="task-title">
+                                <span>Laporan Praktikum Fisika</span>
+                                <span class="status-badge status-urgent">Penting</span>
+                            </div>
+                            <div class="task-subject">
+                                <i class="fas fa-book"></i> Fisika - Pak Budi
+                            </div>
+                            <div class="task-deadline">
+                                <i class="fas fa-clock"></i> Deadline: 2 Hari Lagi
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="task-btn btn-detail">Detail</button>
+                        </div>
+                    </div>
+                    <div class="task-item" data-status="completed">
+                        <div class="task-info">
+                            <div class="task-title">
+                                <span>Makalah Sejarah Indonesia</span>
+                                <span class="status-badge status-completed">Selesai</span>
+                            </div>
+                            <div class="task-subject">
+                                <i class="fas fa-book"></i> Sejarah - Ibu Sinta
+                            </div>
+                            <div class="task-deadline">
+                                <i class="fas fa-check-circle"></i> Telah Diserahkan
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="task-btn btn-detail">Detail</button>
+                        </div>
+                    </div>
+                    <div class="task-item" data-status="pending">
+                        <div class="task-info">
+                            <div class="task-title">
+                                <span>Problem Set Matematika</span>
+                                <span class="status-badge status-pending">Belum Selesai</span>
+                            </div>
+                            <div class="task-subject">
+                                <i class="fas fa-book"></i> Matematika - Pak Ahmad
+                            </div>
+                            <div class="task-deadline">
+                                <i class="fas fa-clock"></i> Deadline: 5 Hari Lagi
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="task-btn btn-detail">Detail</button>
+                        </div>
+                    </div>
+                    <div class="task-item" data-status="pending" data-priority="urgent">
+                        <div class="task-info">
+                            <div class="task-title">
+                                <span>Proyek Seni Budaya</span>
+                                <span class="status-badge status-urgent">Penting</span>
+                            </div>
+                            <div class="task-subject">
+                                <i class="fas fa-book"></i> Seni Budaya - Ibu Dewi
+                            </div>
+                            <div class="task-deadline">
+                                <i class="fas fa-clock"></i> Deadline: Besok
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="task-btn btn-detail">Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kegiatan</h2>
+                <p>Momen-momen berharga yang kami abadikan selama kegiatan belajar dan aktivitas kelas.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/Dg61Xd3M/2-Foto-kelas-800x600.webp" alt="Foto Kelas XI.7 Askarasapta">
+                    <div class="gallery-caption">
+                        <h4>Foto Kelas</h4>
+                        <p>Bersama wali kelas dan seluruh anggota XI.7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/tpQDty81/3-Makan-bersama-400x300.webp" alt="Kegiatan Makan Bersama Kelas XI.7">
+                    <div class="gallery-caption">
+                        <h4>Jumat Berkah</h4>
+                        <p>Makan bersama setelah kegiatan sosial</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/WNK5fyJB/4-makan-bersama-400x300.webp" alt="Kegiatan Senam Kelas XI.7">
+                    <div class="gallery-caption">
+                        <h4>Senam Sehat</h4>
+                        <p>Senam pagi bersama sebelum belajar</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541178735-493-479c1a27ed24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" alt="Kegiatan Outdoor Kelas XI.7">
+                    <div class="gallery-caption">
+                        <h4>Belajar Alam</h4>
+                        <p>Studi lapangan tentang ekosistem</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Praktikum IPA Kelas XI.7">
+                    <div class="gallery-caption">
+                        <h4>Praktikum IPA</h4>
+                        <p>Eksperimen di laboratorium sekolah</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1522&q=80" alt="Upacara Bendera Kelas XI.7">
+                    <div class="gallery-caption">
+                        <h4>Upacara Bendera</h4>
+                        <p>Kami sebagai petugas upacara mingguan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Askarasapta</h3>
+                    <p>Sebuah kelas yang memadukan intelektualitas, seni, dan jiwa kepemimpinan. Kami bangga menjadi bagian dari Banyuwangi yang berbudaya dan berprestasi.</p>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/askarasaptaa?igsh=MXg5Y2Qwa3hsaWhhMg==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@askarasapta?_t=ZS-8yYb2cdUeZu&_r=1" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@askarasaptaofficial?si=UAwu6PFmvuRJo8N5" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:askarasaptaofficial@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Tentang</a></li>
+                        <li><a href="#schedule"><i class="fas fa-chevron-right"></i> Jadwal Piket</a></li>
+                        <li><a href="#tasks"><i class="fas fa-chevron-right"></i> Tugas</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+                        <li><a href="#students"><i class="fas fa-chevron-right"></i> Siswa</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Kontak</a></li>
+                        <li><a href="Alat_Konversi_Foto.html"><i class="fas fa-chevron-right"></i> Konversi Foto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.google.com/?q=SMA+Negeri+1+Cluring" target="_blank"><i class="fas fa-map-marker-alt"></i> Cluring, Banyuwangi</a></li>
+                        <li><a href="mailto:askarasaptaofficial@gmail.com"><i class="fas fa-envelope"></i> askarasaptaofficial@gmail.com</a></li>
+                        <li><a href="https://www.instagram.com/askarasaptaa?igsh=MXg5Y2Qwa3hsaWhhMg==" target="_blank"><i class="fab fa-instagram"></i> @askarasaptaa</a></li>
+                        <li><a href="https://www.tiktok.com/@askarasapta?_t=ZS-8yYb2cdUeZu&_r=1" target="_blank"><i class="fab fa-tiktok"></i> @askarasapta</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 <strong>Kelas XI.7 Askarasapta</strong> • SMA Negeri 1 Cluring • Dibuat dengan <span style="color:var(--gold)">♥</span> dan semangat kebersamaan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Set main content ID for accessibility
+        document.getElementById('about').setAttribute('id', 'main-content');
+        
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('id-ID', options);
+            
+            // Highlight current day in schedule
+            const dayIndex = now.getDay();
+            const dayMap = {1: 'monday', 2: 'tuesday', 3: 'wednesday', 4: 'thursday', 5: 'friday'};
+            const today = dayMap[dayIndex];
+            
+            if (today) {
+                // Remove active class from all days
+                document.querySelectorAll('.schedule-day').forEach(day => {
+                    day.classList.remove('active');
+                });
+                
+                // Add active class to current day
+                const currentDayElement = document.getElementById(`schedule-${today}`);
+                if (currentDayElement) {
+                    currentDayElement.classList.add('active');
+                    
+                    // Scroll to current day if on schedule section
+                    if (window.location.hash === '#schedule') {
+                        setTimeout(() => {
+                            currentDayElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 300);
+                    }
+                }
+            }
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 60000);
+
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 400) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Task filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const taskItems = document.querySelectorAll('.task-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                taskItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.style.display = 'flex';
+                    } else if (filter === 'urgent') {
+                        if (item.getAttribute('data-priority') === 'urgent') {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    } else {
+                        if (item.getAttribute('data-status') === filter) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Task search functionality
+        const taskSearch = document.getElementById('taskSearch');
+        taskSearch.addEventListener('keyup', () => {
+            const searchTerm = taskSearch.value.toLowerCase();
+            
+            taskItems.forEach(item => {
+                const title = item.querySelector('.task-title span').textContent.toLowerCase();
+                const subject = item.querySelector('.task-subject').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || subject.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Task detail buttons
+        const detailButtons = document.querySelectorAll('.btn-detail');
+        detailButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const taskTitle = button.closest('.task-item').querySelector('.task-title span').textContent;
+                alert(`Detail untuk tugas: ${taskTitle}\n\nFitur detail tugas akan segera diluncurkan!`);
+            });
+        });
+
+        // Lazy loading for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('.gallery-item img');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            img.classList.remove('image-loading');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    img.classList.add('image-loading');
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src || img.src;
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
