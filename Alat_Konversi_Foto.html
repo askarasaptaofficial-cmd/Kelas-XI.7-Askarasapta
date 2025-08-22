@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>📸 Alat Konversi Foto Preset Kelas XI.7 Askarasapta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#111827;
+      --muted:#9ca3af;
+      --text:#e5e7eb;
+      --accent:#22d3ee;
+      --ok:#22c55e;
+      --gold:#d4af37;
+      --primary:#4361ee;
+      --secondary:#3f37c9;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1a1a2e);
+      color:var(--text);
+      min-height: 100vh;
+    }
+    .wrap{
+      max-width:1200px;
+      margin:auto;
+      padding:24px;
+    }
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:24px;
+      flex-wrap: wrap;
+    }
+    h1{
+      font-size:24px;
+      margin:0;
+      font-weight:700;
+      letter-spacing:.3px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h1 i{
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.1);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand{
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 16px;
+      border-radius:999px;
+      background: rgba(34, 211, 238, 0.1);
+      border:1px solid var(--accent);
+      color:var(--accent);
+      font-size:13px;
+      font-weight: 500;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #1f2937;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.3);
+      overflow: hidden;
+    }
+    .row{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap
+    }
+    .controls{
+      padding:24px;
+      border-bottom: 1px solid #1f2937;
+    }
+    .controls .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px
+    }
+    label{
+      font-size:13px;
+      color:var(--muted);
+      display:block;
+      margin-bottom:6px;
+      font-weight: 500;
+    }
+    select,input[type="number"],input[type="range"],button{
+      width:100%;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid #334155;
+      background:#0b1020;
+      color:var(--text);
+      outline:none;
+      font-size: 14px;
+    }
+    input[type="file"]{
+      border:1px dashed #334155;
+      background:#0b1020;
+      padding:16px;
+      cursor: pointer;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px
+    }
+    button{
+      cursor:pointer;
+      border:1px solid #334155;
+      background:linear-gradient(180deg,#081026,#070d1f);
+      transition:transform .06s ease,background .2s;
+      font-weight: 500;
+    }
+    button:hover{
+      transform:translateY(-1px)
+    }
+    .btn-accent{
+      border-color:transparent;
+      background:linear-gradient(90deg,var(--primary),var(--secondary));
+      color:white;
+      font-weight:600;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-accent::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .btn-accent:hover::after {
+      left: 100%;
+    }
+    .btn-ok{
+      border-color:transparent;
+      background:linear-gradient(90deg,var(--ok),#15803d);
+      color:#001008;
+      font-weight:600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .drop{
+      padding:24px;
+      text-align: center;
+    }
+    .dropzone{
+      border:2px dashed #334155;
+      border-radius:16px;
+      padding:32px;
+      text-align:center;
+      background:#0b1020;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dropzone:hover, .dropzone.drag{
+      border-color:var(--accent);
+      background: rgba(34, 211, 238, 0.05);
+      box-shadow:0 0 0 4px rgba(34,211,238,.15);
+    }
+    .dropzone.drag{
+      border-style: solid;
+    }
+    .preview{
+      padding:24px;
+    }
+    .outputs{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px
+    }
+    .out{
+      background:#0b1020;
+      border:1px solid #223047;
+      border-radius:16px;
+      padding:16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .out:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .out header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin:0 0 12px 0
+    }
+    .out h3{
+      font-size:15px;
+      margin:0;
+      color:var(--muted);
+      font-weight:600
+    }
+    .out canvas{
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      background:#0a0f1d;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .meta{
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin: 8px 0;
+    }
+    .badge{
+      padding:4px 8px;
+      border:1px solid #334155;
+      border-radius:999px;
+      font-size: 11px;
+    }
+    .dl{
+      margin-top:12px;
+      text-align: center;
+    }
+    .code{
+      white-space:pre-wrap;
+      background:#0b1020;
+      border:1px solid #223047;
+      border-radius:12px;
+      padding:16px;
+      font-size:13px;
+      color:#cbd5e1;
+      line-height: 1.5;
+      position: relative;
+    }
+    .code::before {
+      content: 'HTML Snippet';
+      position: absolute;
+      top: -12px;
+      left: 16px;
+      background: #0b1020;
+      padding: 0 8px;
+      font-size: 11px;
+      color: var(--accent);
+    }
+    .help{
+      font-size:13px;
+      color:#a7b0c0;
+      margin-top:16px;
+      line-height: 1.6;
+      background: rgba(34, 211, 238, 0.05);
+      padding: 16px;
+      border-radius: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    .preset-info {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .preset-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--gold);
+    }
+    .file-info {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .gold-text {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--primary);
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--gold), var(--accent));
+      border-radius: 2px;
+    }
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transform: translateX(120%);
+      transition: transform 0.4s ease;
+      font-weight: 500;
+    }
+    .toast.show {
+      transform: translateX(0);
+    }
+    @media (max-width: 768px) {
+      .controls .grid {
+        grid-template-columns: 1fr;
+      }
+      .outputs {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1><i class="fas fa-camera"></i> Alat Konversi Foto Preset <span class="brand">XI.7 Askarasapta</span></h1>
+      <span class="pill">Untuk Galeri & Dokumentasi Kelas</span>
+    </header>
+
+    <section class="card">
+      <div class="controls">
+        <div class="grid">
+          <div>
+            <label>1) Unggah Gambar</label>
+            <input id="file" type="file" accept="image/*" />
+            <div class="file-info" id="fileInfo">Belum ada gambar yang diunggah</div>
+          </div>
+          <div>
+            <label>2) Pilih Preset</label>
+            <select id="preset">
+              <option value="hero">Hero (16:9 — 768, 1200, 1920)</option>
+              <option value="card">Kartu (3:2 — 300, 600)</option>
+              <option value="avatar">Avatar Bulat (1:1 — 128, 256)</option>
+              <option value="gallery">Galeri (4:3 — 400, 800, 1200)</option>
+              <option value="testi">Testimoni Bulat (1:1 — 80, 128)</option>
+              <option value="custom">Kustom (bebas)</option>
+            </select>
+            <div class="preset-info" id="presetInfo">
+              <div class="preset-item"><i class="fas fa-ruler-combined"></i> <span id="ratio">Rasio: 16:9</span></div>
+              <div class="preset-item"><i class="fas fa-expand"></i> <span id="sizes">Ukuran: 768, 1200, 1920</span></div>
+            </div>
+          </div>
+          <div id="customBox" style="display:none">
+            <label>Ukuran Kustom (pisahkan dengan koma, contoh: 320,640,960)</label>
+            <input id="customSizes" type="text" placeholder="320,640,960" />
+          </div>
+          <div>
+            <label>Format Output</label>
+            <select id="format">
+              <option value="image/webp">WEBP</option>
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/png">PNG (transparan)</option>
+            </select>
+          </div>
+          <div>
+            <label>Kualitas (JPEG/WEBP)</label>
+            <input id="quality" type="range" min="50" max="95" value="85" />
+            <div style="text-align: right; font-size: 12px; margin-top: 4px;"><span id="qualityValue">85</span>%</div>
+          </div>
+        </div>
+        <div class="actions" style="margin-top:18px">
+          <button id="gen" class="btn-accent"><i class="fas fa-magic"></i> 🚀 Generate Gambar</button>
+          <button id="clear"><i class="fas fa-trash-alt"></i> 🗑️ Bersihkan</button>
+        </div>
+      </div>
+      <div class="drop">
+        <div id="dropzone" class="dropzone">
+          <i class="fas fa-cloud-upload-alt" style="font-size: 48px; margin-bottom: 12px; opacity: 0.5;"></i>
+          <p style="margin: 0; font-weight: 500;">Tarik & lepas gambar ke sini</p>
+          <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.7;">atau klik untuk memilih dari perangkat</p>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="section-title">
+          <h2>Hasil Konversi</h2>
+        </div>
+        <div id="outputs" class="outputs"></div>
+        <div id="codeBox" style="margin-top:24px"></div>
+      </div>
+    </section>
+
+    <p class="help">
+      <i class="fas fa-lightbulb" style="color: var(--accent); margin-right: 8px;"></i> 
+      <strong>Tip untuk XI.7:</strong> Untuk hasil terbaik, unggah foto kualitas tinggi dari kegiatan kelas, lalu ekspor ke format 
+      <span class="gold-text">WEBP</span> dengan kualitas 80–85 untuk ukuran file kecil namun tetap tajam. 
+      Untuk avatar atau testimoni bulat, gunakan format 
+      <span class="gold-text">PNG</span> jika ingin latar belakang transparan.
+    </p>
+  </div>
+
+  <div class="toast" id="toast">Gambar berhasil di-generate!</div>
+
+<script>
+(() => {
+  const el = (id) => document.getElementById(id);
+  const fileInput = el('file');
+  const presetSel = el('preset');
+  const customBox = el('customBox');
+  const customSizes = el('customSizes');
+  const formatSel = el('format');
+  const qualityRange = el('quality');
+  const qualityValue = el('qualityValue');
+  const genBtn = el('gen');
+  const clearBtn = el('clear');
+  const outputs = el('outputs');
+  const codeBox = el('codeBox');
+  const dropzone = el('dropzone');
+  const fileInfo = el('fileInfo');
+  const ratioInfo = el('ratio');
+  const sizesInfo = el('sizes');
+  const toast = el('toast');
+
+  let imageBitmap = null;
+  let filenameBase = 'image';
+
+  // Preset definisi
+  const PRESETS = {
+    hero: { ratio: 16/9, sizes: [768, 1200, 1920], circle: false, label: 'Hero 16:9' },
+    card: { ratio: 3/2, sizes: [300, 600], circle: false, label: 'Kartu 3:2' },
+    avatar: { ratio: 1, sizes: [128, 256], circle: true, label: 'Avatar Bulat 1:1' },
+    gallery: { ratio: 4/3, sizes: [400, 800, 1200], circle: false, label: 'Galeri 4:3' },
+    testi: { ratio: 1, sizes: [80, 128], circle: true, label: 'Testimoni Bulat 1:1' }
+  };
+
+  // Update info preset
+  function updatePresetInfo() {
+    const preset = presetSel.value;
+    if (preset === 'custom') {
+      ratioInfo.textContent = 'Rasio: 1:1 (kustom)';
+      sizesInfo.textContent = 'Ukuran: Sesuai input';
+    } else {
+      const p = PRESETS[preset];
+      ratioInfo.textContent = `Rasio: ${p.ratio === 1 ? '1:1' : p.ratio > 1 ? '16:9' : '3:2'}`;
+      sizesInfo.textContent = `Ukuran: ${p.sizes.join(', ')}`;
+    }
+  }
+
+  // Toggle custom sizes
+  presetSel.addEventListener('change', () => {
+    customBox.style.display = presetSel.value === 'custom' ? 'block' : 'none';
+    updatePresetInfo();
+  });
+
+  // Update quality value display
+  qualityRange.addEventListener('input', () => {
+    qualityValue.textContent = qualityRange.value;
+  });
+
+  // Drag & drop
+  ['dragenter','dragover'].forEach(evt => dropzone.addEventListener(evt, e => {
+    e.preventDefault(); 
+    dropzone.classList.add('drag');
+  }));
+  ['dragleave','drop'].forEach(evt => dropzone.addEventListener(evt, e => {
+    e.preventDefault(); 
+    dropzone.classList.remove('drag');
+  }));
+  dropzone.addEventListener('drop', (e) => {
+    const f = e.dataTransfer.files && e.dataTransfer.files[0];
+    if (f) loadFile(f);
+  });
+  dropzone.addEventListener('click', () => fileInput.click());
+
+  // File input
+  fileInput.addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (f) loadFile(f);
+  });
+
+  async function loadFile(file){
+    try{
+      filenameBase = (file.name || 'image').replace(/\.[^.]+$/, '');
+      const arrBuf = await file.arrayBuffer();
+      imageBitmap = await createImageBitmap(new Blob([arrBuf]));
+      dropzone.innerHTML = `
+        <i class="fas fa-check-circle" style="color: #22c55e; font-size: 32px; margin-bottom: 8px;"></i>
+        <p style="margin: 0; font-weight: 500; color: #22c55e;">Gambar berhasil dimuat!</p>
+        <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.9;">${file.name} (${imageBitmap.width}×${imageBitmap.height})</p>
+      `;
+      fileInfo.textContent = `Gambar dimuat: ${file.name}`;
+    }catch(err){
+      showError('Gagal memuat gambar: ' + err.message);
+    }
+  }
+
+  // Utility: crop ke rasio target (object-fit: cover)
+  function coverCropRect(srcW, srcH, targetRatio){
+    const srcRatio = srcW / srcH;
+    if (srcRatio > targetRatio){
+      // sumber terlalu lebar -> potong kiri/kanan
+      const h = srcH;
+      const w = Math.round(h * targetRatio);
+      const x = Math.round((srcW - w)/2);
+      const y = 0;
+      return {x,y,w,h};
+    } else {
+      // sumber terlalu tinggi -> potong atas/bawah
+      const w = srcW;
+      const h = Math.round(w / targetRatio);
+      const x = 0;
+      const y = Math.round((srcH - h)/2);
+      return {x,y,w,h};
+    }
+  }
+
+  function toDataURL(canvas, mime, quality){
+    // Fallback jika format tidak didukung
+    const supported = canvas.toDataURL(mime, quality);
+    if (supported.indexOf('data:') === 0 && supported.indexOf(mime) !== -1) return supported;
+    // fallback ke PNG
+    return canvas.toDataURL('image/png');
+  }
+
+  function makeCanvas(w,h){
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h; return c;
+  }
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
+  function showError(message) {
+    const errorToast = document.createElement('div');
+    errorToast.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #f44336, #d32f2f);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      z-index: 1000;
+      font-weight: 500;
+      animation: slideIn 0.4s forwards;
+    `;
+    errorToast.textContent = message;
+    document.body.appendChild(errorToast);
+    
+    setTimeout(() => {
+      errorToast.style.animation = 'slideOut 0.4s forwards';
+      setTimeout(() => document.body.removeChild(errorToast), 400);
+    }, 3000);
+    
+    // Add animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(120%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(120%); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  genBtn.addEventListener('click', async () => {
+    if (!imageBitmap){ 
+      showError('⚠️ Unggah gambar terlebih dahulu.'); 
+      return; 
+    }
+
+    outputs.innerHTML = '';
+    codeBox.innerHTML = '';
+
+    const presetVal = presetSel.value;
+    let sizes = [];
+    let ratio = 1; 
+    let circle = false; 
+    let label = 'Kustom';
+
+    if (presetVal === 'custom'){
+      const raw = (customSizes.value || '').trim();
+      sizes = raw.split(',').map(s=>parseInt(s,10)).filter(Boolean);
+      ratio = 1; 
+      circle = false; 
+      label = 'Kustom';
+      if (!sizes.length){ 
+        showError('❌ Isi ukuran kustom, misal: 320,640,960'); 
+        return; 
+      }
+    } else {
+      const p = PRESETS[presetVal];
+      sizes = p.sizes; 
+      ratio = p.ratio; 
+      circle = p.circle; 
+      label = p.label;
+    }
+
+    const mime = formatSel.value;
+    const quality = parseInt(qualityRange.value,10)/100;
+
+    // Hasil untuk HTML snippet (srcset)
+    const srcset = [];
+    let fallback = '';
+
+    for (const w of sizes){
+      const h = Math.round(w / ratio);
+      const rect = coverCropRect(imageBitmap.width, imageBitmap.height, ratio);
+
+      const canvas = makeCanvas(w, h);
+      const ctx = canvas.getContext('2d');
+      ctx.imageSmoothingQuality = 'high';
+
+      if (circle){
+        // latar transparan (PNG/WebP) atau putih (JPEG fallback)
+        if (mime === 'image/jpeg'){
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0,0,w,h);
+        }
+        ctx.save();
+        ctx.beginPath();
+        const r = Math.min(w,h)/2;
+        ctx.arc(w/2, h/2, r, 0, Math.PI*2);
+        ctx.closePath();
+        ctx.clip();
+      }
+
+      ctx.drawImage(
+        imageBitmap,
+        rect.x, rect.y, rect.w, rect.h,
+        0, 0, w, h
+      );
+
+      if (circle){ ctx.restore(); }
+
+      const url = toDataURL(canvas, mime, quality);
+
+      // UI kartu output
+      const card = document.createElement('div');
+      card.className = 'out';
+      card.innerHTML = `
+        <header>
+          <h3>${label} · ${w}×${h}</h3>
+          <span class="badge">${mime.replace('image/','').toUpperCase()}</span>
+        </header>
+        <canvas></canvas>
+        <div class="meta">
+          <span><i class="fas fa-ruler-combined"></i> ${w}×${h}</span>
+          <span><i class="fas fa-image"></i> ${circle ? 'Bulat' : 'Persegi'}</span>
+        </div>
+        <div class="dl">
+          <a class="btn-ok" href="${url}" download="${filenameBase}-${w}x${h}.${mime.split('/')[1].replace('jpeg','jpg')}">
+            <i class="fas fa-download"></i> Unduh
+          </a>
+        </div>
+      `;
+      const c = card.querySelector('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(canvas,0,0);
+
+      // info ukuran byte kira-kira
+      fetch(url).then(r=>r.blob()).then(b=>{
+        const kb = (b.size/1024).toFixed(1);
+        const sizeSpan = document.createElement('span');
+        sizeSpan.innerHTML = `<i class="fas fa-file"></i> ${kb} KB`;
+        card.querySelector('.meta').appendChild(sizeSpan);
+      });
+
+      outputs.appendChild(card);
+
+      // Kumpulkan untuk snippet srcset (non-bulat)
+      if (!circle){
+        const filename = `${filenameBase}-${w}.${mime.split('/')[1].replace('jpeg','jpg')}`;
+        srcset.push(`img/${presetVal}/${filename} ${w}w`);
+        if (!fallback) fallback = `img/${presetVal}/${filenameBase}-${sizes[sizes.length-1]}.${mime.split('/')[1].replace('jpeg','jpg')}`;
+      }
+    }
+
+    // Tampilkan snippet HTML (untuk non-circle gunakan <picture> + srcset)
+    if (!circle){
+      const typeAttr = mime;
+      const html = `
+<picture>
+  <source srcset="${srcset.join(',\n          ')}" type="${typeAttr}">
+  <img src="${fallback}" alt="Gambar ${label}" loading="lazy" style="max-width:100%;height:auto;border-radius:12px;">
+</picture>`;
+      codeBox.innerHTML = `<div class="code">${html.replace(/</g,'<').replace(/>/g,'>')}</div>`;
+    } else {
+      const html = `<img src="img/${presetSel.value}/${filenameBase}-${sizes[0]}x${sizes[0]}.${mime.split('/')[1].replace('jpeg','jpg')}" alt="${label}" width="${sizes[0]}" height="${sizes[0]}" style="border-radius:50%;object-fit:cover;max-width:100%;">`;
+      codeBox.innerHTML = `<div class="code">${html.replace(/</g,'<').replace(/>/g,'>')}</div>`;
+    }
+    
+    showToast('✅ Gambar berhasil di-generate!');
+  });
+
+  clearBtn.addEventListener('click', ()=>{
+    outputs.innerHTML = '';
+    codeBox.innerHTML = '';
+    dropzone.innerHTML = `
+      <i class="fas fa-cloud-upload-alt" style="font-size: 48px; margin-bottom: 12px; opacity: 0.5;"></i>
+      <p style="margin: 0; font-weight: 500;">Tarik & lepas gambar ke sini</p>
+      <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.7;">atau klik untuk memilih dari perangkat</p>
+    `;
+    fileInfo.textContent = 'Belum ada gambar yang diunggah';
+    fileInput.value = '';
+    imageBitmap = null;
+    showToast('🧹 Bersihkan berhasil!');
+  });
+  
+  // Inisialisasi
+  updatePresetInfo();
+})();
+</script>
+</body>
+</html>
