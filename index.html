@@ -207,82 +207,42 @@
             z-index: 1001;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 6rem 0;
-            background: url('https://i.ibb.co.com/Dg61Xd3M/2-Foto-kelas-800x600.webp') no-repeat center center;
-            background-size: cover;
-            position: relative;
-            color: white;
+        /* Video Section (Mengganti Hero) */
+        .video-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(63, 55, 201, 0.08));
             text-align: center;
         }
 
-        .hero::before {
-            content: '';
+        .video-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.8), rgba(63, 55, 201, 0.85));
+            border: none;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.9rem 2.2rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 6px 20px rgba(76, 201, 240, 0.35);
-        }
-
-        .cta-button.primary {
-            background-color: var(--accent);
+        .video-caption {
+            margin-top: 1.5rem;
             color: var(--dark);
-        }
-
-        .cta-button.secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-            box-shadow: none;
-            margin-left: 1rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(76, 201, 240, 0.5);
-        }
-
-        .cta-button.secondary:hover {
-            background-color: rgba(255,255,255,0.15);
-            border-color: var(--gold);
+            font-style: italic;
         }
 
         /* Section Title */
@@ -692,6 +652,8 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .footer-column h3 {
@@ -736,6 +698,8 @@
             display: flex;
             gap: 0.8rem;
             margin-top: 1.2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .social-media a {
@@ -761,6 +725,8 @@
             text-align: center;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
         }
 
         /* Back to Top */
@@ -820,10 +786,6 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
             .task-search {
                 order: -1;
                 width: 100%;
@@ -873,10 +835,6 @@
                 cursor: pointer;
             }
             
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
             .cta-button {
                 margin: 0.5rem 0;
             }
@@ -898,6 +856,10 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+
+            .video-container {
+                margin: 0 1rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -907,10 +869,6 @@
             
             .brand-text h1 {
                 font-size: 1.7rem;
-            }
-            
-            .hero {
-                padding: 4rem 0;
             }
             
             .task-filters {
@@ -971,20 +929,18 @@
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
+    <!-- Video Section (Mengganti Hero) -->
+    <section class="video-section" id="home">
         <div class="container">
-            <div class="hero-content">
-                <h2>Askarasapta: Cahaya Tujuh Jiwa</h2>
-                <p><em>"Satu untuk semangat, tujuh untuk keberagaman. Kami adalah harmoni dari bakat, budaya, dan tekad."</em> Selamat datang di kelas XI.7 – tempat prestasi dan persaudaraan bersinar.</p>
-                <div class="cta-buttons">
-                    <a href="#gallery" class="cta-button primary">
-                        <i class="fas fa-images"></i> Lihat Galeri
-                    </a>
-                    <a href="#tasks" class="cta-button secondary">
-                        <i class="fas fa-tasks"></i> Lihat Tugas
-                    </a>
+            <div class="section-title">
+                <h2>Video Dokumentasi Kelas</h2>
+                <p>Rekaman kegiatan dan momen berharga kelas XI.7 Askarasapta</p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/c_R5JF_5qT0?si=GQEPVkevw6w755DQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+                <p class="video-caption">Video dokumentasi kegiatan kelas XI.7 Askarasapta - SMA Negeri 1 Cluring</p>
             </div>
         </div>
     </section>
@@ -1232,6 +1188,27 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/1f6NhMv4/KEBERSIHAN-KELAS-1.jpg" alt="Kegiatan Kebersihan Kelas">
+                    <div class="gallery-caption">
+                        <h4>Kebersihan Kelas</h4>
+                        <p>Kegiatan gotong royong membersihkan ruang kelas</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/1Gc5WtTt/PEMBIASAN-PAGI.jpg" alt="Kegiatan Pembiasaan Pagi">
+                    <div class="gallery-caption">
+                        <h4>Pembiasaan Pagi</h4>
+                        <p>Kegiatan rutin pembiasaan pagi sebelum pembelajaran</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/rG1s9MgV/AL-QUR-AN-DIGITAL.jpg" alt="Kegiatan Al-Qur'an Digital">
+                    <div class="gallery-caption">
+                        <h4>Al-Qur'an Digital</h4>
+                        <p>Pemanfaatan teknologi digital dalam pembelajaran Al-Qur'an</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
                     <img src="https://i.ibb.co.com/Dg61Xd3M/2-Foto-kelas-800x600.webp" alt="Foto Kelas XI.7 Askarasapta">
                     <div class="gallery-caption">
                         <h4>Foto Kelas</h4>
@@ -1252,27 +1229,6 @@
                         <p>Senam pagi bersama sebelum belajar</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1541178735-493-479c1a27ed24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" alt="Kegiatan Outdoor Kelas XI.7">
-                    <div class="gallery-caption">
-                        <h4>Belajar Alam</h4>
-                        <p>Studi lapangan tentang ekosistem</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Praktikum IPA Kelas XI.7">
-                    <div class="gallery-caption">
-                        <h4>Praktikum IPA</h4>
-                        <p>Eksperimen di laboratorium sekolah</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1522&q=80" alt="Upacara Bendera Kelas XI.7">
-                    <div class="gallery-caption">
-                        <h4>Upacara Bendera</h4>
-                        <p>Kami sebagai petugas upacara mingguan</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1283,7 +1239,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Askarasapta</h3>
-                    <p>Sebuah kelas yang memadukan intelektualitas, seni, và jiwa kepemimpinan. Kami bangga menjadi bagian dari Banyuwangi yang berbudaya và berprestasi.</p>
+                    <p>Sebuah kelas yang memadukan intelektualitas, seni, và jiwa kepemimpinan. Kami bangga menjadi bagian dari Banyuwangi yang berbudaya dan berprestasi.</p>
                     <div class="social-media">
                         <a href="https://www.instagram.com/askarasaptaa?igsh=MXg5Y2Qwa3hsaWhhMg==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@askarasapta?_t=ZS-8yYb2cdUeZu&_r=1" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
