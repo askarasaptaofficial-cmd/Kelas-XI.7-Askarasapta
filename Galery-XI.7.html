@@ -3,499 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri Kelas XI.7 Askarasapta — Premium Edition</title>
+    <meta name="description" content="Galeri Foto Kegiatan Kelas XI.7 Askarasapta SMA Negeri 1 Cluring">
+    <meta name="keywords" content="galeri, foto, askarasapta, sman 1 cluring, kelas XI.7, kegiatan, dokumentasi">
+    <meta name="author" content="Kelas XI.7 Askarasapta">
+    <title>Galeri Kegiatan • XI.7 Askarasapta</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/7MsXfrF/1-logo-kelas-256x256.webp">
     <style>
         :root {
-            --primary: #1a6fc4;
-            --secondary: #2c3e50;
-            --accent: #e74c3c;
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --gold: #d4af37;
+            --dark: #1a1a2e;
             --light: #f8f9fa;
-            --dark: #2c3e50;
-            --text: #333;
-            --text-light: #7f8c8d;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --card-bg: #ffffff;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.12);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
             background-color: var(--light);
-            color: var(--text);
+            color: var(--dark);
             line-height: 1.7;
             overflow-x: hidden;
-            transition: background-color 0.4s, color 0.4s;
         }
 
-        body.dark-mode {
-            background-color: #121212;
-            color: #f5f5f5;
-        }
-
-        body.dark-mode .gallery-item,
-        body.dark-mode footer,
-        body.dark-mode header {
-            background-color: #1e1e1e;
-            color: #f5f5f5;
-        }
-
-        body.dark-mode .gallery-caption {
-            color: #ddd;
-        }
-
-        /* Header with Parallax Effect */
+        /* Header Minimalis */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
+            padding: 1.5rem 0;
             text-align: center;
-            padding: 6rem 1rem 4rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            z-index: 1;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://i.ibb.co.com/7J64hVHq/AL-QUR-AN-DIGITAL.jpg') center/cover no-repeat;
-            opacity: 0.1;
-            z-index: -1;
-            transform: translateY(0);
-            transition: transform 0.5s ease-out;
-        }
-
-        body.dark-mode header::before {
-            opacity: 0.05;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 2.2rem;
             margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            opacity: 0;
-            animation: fadeInDown 1s ease forwards 0.3s;
+            letter-spacing: -0.5px;
         }
 
-        header .subtitle {
-            font-size: 1.3rem;
+        header p {
+            font-size: 1rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards 0.6s;
         }
 
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
             background: rgba(255,255,255,0.2);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .dark-mode-toggle:hover {
+        .back-link:hover {
             background: rgba(255,255,255,0.3);
-            transform: scale(1.1);
+            transform: translateY(-2px);
         }
 
         /* Container */
         .container {
             max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px;
+            margin: 3rem auto;
+            padding: 0 2rem;
         }
 
-        /* Gallery Grid */
-        .gallery {
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.7rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #555;
+            max-width: 750px;
+            margin: 0.8rem auto 0;
+            font-size: 1.05rem;
+        }
+
+        /* Gallery Grid - Kartu Modern */
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            margin: 3rem 0;
-            padding: 20px 0;
+            gap: 2rem;
         }
 
-        .gallery-item {
-            background: white;
-            border-radius: 16px;
+        .gallery-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: calc(0.1s * var(--i));
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        .gallery-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: var(--shadow-hover);
         }
 
-        .gallery-img-container {
-            height: 220px;
+        .card-image-container {
+            height: 240px;
             overflow: hidden;
             position: relative;
         }
 
-        .gallery-img {
+        .card-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
 
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.05);
+        .gallery-card:hover .card-image {
+            transform: scale(1.08);
         }
 
-        .gallery-caption {
-            padding: 20px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--dark);
-            transition: var(--transition);
-        }
-
-        /* Lightbox Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
             left: 0;
-            top: 0;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(5px);
-            overflow: hidden;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            transform: translateY(20px);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: all 0.4s ease;
         }
 
-        .modal.active {
+        .gallery-card:hover .card-overlay {
+            transform: translateY(0);
             opacity: 1;
         }
 
-        .modal-content-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            position: relative;
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.5px;
         }
 
-        .modal-content {
-            max-width: 90%;
-            max-height: 80vh;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: var(--transition);
+        .card-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
         }
 
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.1);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 24px;
-            transition: var(--transition);
-        }
-
-        .modal-nav:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .modal-nav.prev { left: 20px; }
-        .modal-nav.next { right: 20px; }
-
-        .close {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            color: white;
-            font-size: 36px;
-            cursor: pointer;
-            background: rgba(0,0,0,0.3);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .close:hover {
-            background: rgba(255,255,255,0.2);
-            transform: rotate(90deg);
-        }
-
-        .caption-container {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            backdrop-filter: blur(5px);
-            max-width: 80%;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        /* Footer */
+        /* Footer Sederhana */
         footer {
-            background: var(--secondary);
+            background: var(--dark);
             color: white;
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
             font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), #e74c3c, #f39c12, #27ae60);
-            animation: gradientShift 3s infinite linear;
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
         }
 
-        @keyframes gradientShift {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            header .subtitle { font-size: 1.1rem; }
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-            .modal-nav { width: 40px; height: 40px; font-size: 20px; }
-            .close { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 28px; }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 480px) {
-            header { padding: 5rem 1rem 3rem; }
-            .gallery { grid-template-columns: 1fr; }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
         }
 
-        /* Loading Skeleton */
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-            border-radius: 8px;
+        /* Loading Effect */
+        .card-image {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
         }
 
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        .gallery-img.skeleton {
-            height: 220px;
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-
+    <!-- Header -->
     <header>
-        <button class="dark-mode-toggle" id="darkModeToggle">
-            <i class="fas fa-moon"></i>
-        </button>
-        <h1>Galeri Kelas XI.7 Askarasapta</h1>
-        <p class="subtitle">Kumpulan Momen Berharga, Kegiatan Inspiratif, dan Kenangan Tak Terlupakan</p>
+        <h1>Galeri Kegiatan Kelas XI.7</h1>
+        <p>Momen-momen berharga yang kami abadikan selama kegiatan belajar dan aktivitas kelas.</p>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
     </header>
 
+    <!-- Main Content -->
     <div class="container">
-        <div class="gallery" id="gallery">
-            <!-- Gambar akan di-load via JS untuk skeleton effect -->
+        <div class="section-title">
+            <h2>Koleksi Foto Kami</h2>
+            <p>Setiap foto menceritakan kisah kebersamaan, semangat, dan prestasi kelas Askarasapta.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Kartu Galeri 1 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/1f6NhMv4/KEBERSIHAN-KELAS-1.jpg" alt="Kegiatan Kebersihan Kelas" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Kebersihan Kelas</h3>
+                        <p class="card-description">Kegiatan gotong royong membersihkan ruang kelas untuk menciptakan lingkungan belajar yang nyaman dan sehat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 2 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/1Gc5WtTt/PEMBIASAN-PAGI.jpg" alt="Kegiatan Pembiasaan Pagi" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Pembiasaan Pagi</h3>
+                        <p class="card-description">Kegiatan rutin pembiasaan pagi sebelum pembelajaran dimulai, membangun disiplin dan karakter siswa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 3 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/rG1s9MgV/AL-QUR-AN-DIGITAL.jpg" alt="Kegiatan Al-Qur'an Digital" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Al-Qur'an Digital</h3>
+                        <p class="card-description">Pemanfaatan teknologi digital dalam pembelajaran Al-Qur'an, memudahkan siswa dalam memahami dan menghafal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 4 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/Dg61Xd3M/2-Foto-kelas-800x600.webp" alt="Foto Kelas XI.7 Askarasapta" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Foto Kelas</h3>
+                        <p class="card-description">Potret kebersamaan seluruh anggota kelas XI.7 Askarasapta bersama wali kelas tercinta.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 5 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/tpQDty81/3-Makan-bersama-400x300.webp" alt="Kegiatan Makan Bersama Kelas XI.7" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Jumat Berkah</h3>
+                        <p class="card-description">Momen kebersamaan makan bersama setelah kegiatan sosial, mempererat tali silaturahmi antar siswa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 6 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/WNK5fyJB/4-makan-bersama-400x300.webp" alt="Kegiatan Senam Kelas XI.7" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Senam Sehat</h3>
+                        <p class="card-description">Senam pagi bersama sebelum belajar dimulai, untuk menyegarkan tubuh dan pikiran.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 7 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/N2N5HM9S/PERINGATAN-MAULID-NABI-SAW.jpg" alt="Peringatan Maulid Nabi SAW" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Peringatan Maulid Nabi</h3>
+                        <p class="card-description">Kegiatan peringatan Maulid Nabi Muhammad SAW, mengenang dan meneladani akhlak Rasulullah.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 8 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/DPNkNTyS/LOMBA-HADRAH.jpg" alt="Lomba Hadrah" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Lomba Hadrah</h3>
+                        <p class="card-description">Penampilan grup hadrah kelas XI.7 dalam rangka memperingati Maulid Nabi, menampilkan kreativitas dan kekompakan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Galeri 9 -->
+            <div class="gallery-card">
+                <div class="card-image-container">
+                    <img src="https://i.ibb.co.com/SD0c6NGm/JUM-AT-BERSIH.jpg" alt="Jumat Bersih" class="card-image">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Jumat Bersih</h3>
+                        <p class="card-description">Kegiatan Jumat bersih di lingkungan sekolah, menanamkan rasa tanggung jawab terhadap kebersihan lingkungan.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Lightbox Modal -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-content-wrapper">
-            <div class="modal-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
-            <img class="modal-content" id="img01">
-            <div class="modal-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="caption-container" id="caption"></div>
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Kelas XI.7 Askarasapta — All Rights Reserved | Dibuat dengan ❤️ oleh Siswa-Siswi Kreatif</p>
+        <p>&copy; 2025 <strong>Kelas XI.7 Askarasapta</strong> • SMA Negeri 1 Cluring</p>
+        <p><a href="index.html">Kembali ke Website Utama</a></p>
     </footer>
 
     <script>
-        // Data gambar (bisa dipindah ke JSON/external file jika banyak)
-        const images = [
-            { src: "https://i.ibb.co.com/7J64hVHq/AL-QUR-AN-DIGITAL.jpg", caption: "Al-Qur'an Digital" },
-            { src: "https://i.ibb.co.com/F4pMTLzL/PEMBIASAN-PAGI.jpg", caption: "Pembiasaan Pagi" },
-            { src: "https://i.ibb.co.com/jvRYBz6j/KEBERSIHAN-KELAS-1.jpg", caption: "Kebersihan Kelas" },
-            { src: "https://i.ibb.co.com/SD0c6NGm/JUM-AT-BERSIH.jpg", caption: "Jumat Bersih" },
-            { src: "https://i.ibb.co.com/N2N5HM9S/PERINGATAN-MAULID-NABI-SAW.jpg", caption: "Peringatan Maulid Nabi SAW" },
-            { src: "https://i.ibb.co.com/DPNkNTyS/LOMBA-HADRAH.jpg", caption: "Lomba Hadrah" }
-        ];
-
-        // Render gallery dengan skeleton effect
-        const gallery = document.getElementById('gallery');
-        images.forEach((item, index) => {
-            const itemEl = document.createElement('div');
-            itemEl.className = 'gallery-item';
-            itemEl.style.setProperty('--i', index);
-
-            itemEl.innerHTML = `
-                <div class="gallery-img-container">
-                    <img class="gallery-img skeleton" alt="${item.caption}" data-src="${item.src}" onclick="openModal(this, ${index})">
-                </div>
-                <div class="gallery-caption">${item.caption}</div>
-            `;
-            gallery.appendChild(itemEl);
+        // Script sederhana untuk efek tambahan (opsional)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menambahkan animasi urutan saat halaman dimuat
+            const cards = document.querySelectorAll('.gallery-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
         });
-
-        // Lazy load images
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelectorAll('.gallery-img').forEach(img => {
-                    img.src = img.dataset.src;
-                    img.classList.remove('skeleton');
-                });
-            }, 500);
-        });
-
-        // Lightbox Logic
-        let currentIndex = 0;
-
-        function openModal(img, index) {
-            const modal = document.getElementById("myModal");
-            const modalImg = document.getElementById("img01");
-            const captionText = document.getElementById("caption");
-
-            currentIndex = index;
-            modal.style.display = "flex";
-            setTimeout(() => modal.classList.add('active'), 10);
-
-            modalImg.src = img.src;
-            captionText.innerHTML = img.alt;
-
-            document.body.style.overflow = 'hidden'; // prevent background scroll
-        }
-
-        function closeModal() {
-            const modal = document.getElementById("myModal");
-            modal.classList.remove('active');
-            setTimeout(() => {
-                modal.style.display = "none";
-                document.body.style.overflow = '';
-            }, 300);
-        }
-
-        function changeImage(direction) {
-            currentIndex = (currentIndex + direction + images.length) % images.length;
-            const modalImg = document.getElementById("img01");
-            const captionText = document.getElementById("caption");
-            const currentImage = images[currentIndex];
-
-            modalImg.src = currentImage.src;
-            captionText.innerHTML = currentImage.caption;
-        }
-
-        // Close modal on click outside or ESC
-        window.onclick = function(event) {
-            const modal = document.getElementById("myModal");
-            if (event.target === modal) closeModal();
-        }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") closeModal();
-            if (event.key === "ArrowLeft") changeImage(-1);
-            if (event.key === "ArrowRight") changeImage(1);
-        });
-
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (prefersDark || localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        });
-
-        // Scroll Reveal (opsional — jika ingin tambah animasi saat scroll)
-        // Bisa ditambahkan library AOS.js atau buat manual
     </script>
-
 </body>
 </html>
