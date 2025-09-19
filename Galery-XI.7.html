@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kelas XI.7 Askarasapta — Premium Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a6fc4;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.4s, color 0.4s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .gallery-item,
+        body.dark-mode footer,
+        body.dark-mode header {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .gallery-caption {
+            color: #ddd;
+        }
+
+        /* Header with Parallax Effect */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem 4rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            z-index: 1;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.ibb.co.com/7J64hVHq/AL-QUR-AN-DIGITAL.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+            transform: translateY(0);
+            transition: transform 0.5s ease-out;
+        }
+
+        body.dark-mode header::before {
+            opacity: 0.05;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            opacity: 0;
+            animation: fadeInDown 1s ease forwards 0.3s;
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .dark-mode-toggle:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 3rem 0;
+            padding: 20px 0;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .gallery-img-container {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+        }
+
+        .modal-content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: var(--transition);
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            transition: var(--transition);
+        }
+
+        .modal-nav:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-nav.prev { left: 20px; }
+        .modal-nav.next { right: 20px; }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 36px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .caption-container {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+            max-width: 80%;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #e74c3c, #f39c12, #27ae60);
+            animation: gradientShift 3s infinite linear;
+        }
+
+        @keyframes gradientShift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            header .subtitle { font-size: 1.1rem; }
+            .gallery { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+            .modal-nav { width: 40px; height: 40px; font-size: 20px; }
+            .close { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 28px; }
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 5rem 1rem 3rem; }
+            .gallery { grid-template-columns: 1fr; }
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .gallery-img.skeleton {
+            height: 220px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <h1>Galeri Kelas XI.7 Askarasapta</h1>
+        <p class="subtitle">Kumpulan Momen Berharga, Kegiatan Inspiratif, dan Kenangan Tak Terlupakan</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery" id="gallery">
+            <!-- Gambar akan di-load via JS untuk skeleton effect -->
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content-wrapper">
+            <div class="modal-nav prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+            <img class="modal-content" id="img01">
+            <div class="modal-nav next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="caption-container" id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Kelas XI.7 Askarasapta — All Rights Reserved | Dibuat dengan ❤️ oleh Siswa-Siswi Kreatif</p>
+    </footer>
+
+    <script>
+        // Data gambar (bisa dipindah ke JSON/external file jika banyak)
+        const images = [
+            { src: "https://i.ibb.co.com/7J64hVHq/AL-QUR-AN-DIGITAL.jpg", caption: "Al-Qur'an Digital" },
+            { src: "https://i.ibb.co.com/F4pMTLzL/PEMBIASAN-PAGI.jpg", caption: "Pembiasaan Pagi" },
+            { src: "https://i.ibb.co.com/jvRYBz6j/KEBERSIHAN-KELAS-1.jpg", caption: "Kebersihan Kelas" },
+            { src: "https://i.ibb.co.com/SD0c6NGm/JUM-AT-BERSIH.jpg", caption: "Jumat Bersih" },
+            { src: "https://i.ibb.co.com/N2N5HM9S/PERINGATAN-MAULID-NABI-SAW.jpg", caption: "Peringatan Maulid Nabi SAW" },
+            { src: "https://i.ibb.co.com/DPNkNTyS/LOMBA-HADRAH.jpg", caption: "Lomba Hadrah" }
+        ];
+
+        // Render gallery dengan skeleton effect
+        const gallery = document.getElementById('gallery');
+        images.forEach((item, index) => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'gallery-item';
+            itemEl.style.setProperty('--i', index);
+
+            itemEl.innerHTML = `
+                <div class="gallery-img-container">
+                    <img class="gallery-img skeleton" alt="${item.caption}" data-src="${item.src}" onclick="openModal(this, ${index})">
+                </div>
+                <div class="gallery-caption">${item.caption}</div>
+            `;
+            gallery.appendChild(itemEl);
+        });
+
+        // Lazy load images
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.gallery-img').forEach(img => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('skeleton');
+                });
+            }, 500);
+        });
+
+        // Lightbox Logic
+        let currentIndex = 0;
+
+        function openModal(img, index) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+
+            currentIndex = index;
+            modal.style.display = "flex";
+            setTimeout(() => modal.classList.add('active'), 10);
+
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+
+            document.body.style.overflow = 'hidden'; // prevent background scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = "none";
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+            const currentImage = images[currentIndex];
+
+            modalImg.src = currentImage.src;
+            captionText.innerHTML = currentImage.caption;
+        }
+
+        // Close modal on click outside or ESC
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) closeModal();
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") closeModal();
+            if (event.key === "ArrowLeft") changeImage(-1);
+            if (event.key === "ArrowRight") changeImage(1);
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (prefersDark || localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Scroll Reveal (opsional — jika ingin tambah animasi saat scroll)
+        // Bisa ditambahkan library AOS.js atau buat manual
+    </script>
+
+</body>
+</html>
