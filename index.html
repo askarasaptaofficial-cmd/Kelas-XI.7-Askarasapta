@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Website resmi kelas XI.7 Askarasapta SMA Negeri 1 Cluring - Portal informasi, tugas, galeri, dan kegiatan kelas">
+    <meta name="description" content="Website resmi kelas XI.7 Askarasapta SMA Negeri 1 Cluring - Portal informasi, tugas, dan kegiatan kelas">
     <meta name="keywords" content="askarasapta, sman 1 cluring, kelas XI.7, siswa, pendidikan, banyuwangi">
     <meta name="author" content="Kelas XI.7 Askarasapta">
     <meta property="og:title" content="XI.7 Askarasapta • SMA Negeri 1 Cluring 2025">
-    <meta property="og:description" content="Website resmi kelas XI.7 Askarasapta SMA Negeri 1 Cluring - Portal informasi, tugas, galeri, dan kegiatan kelas">
+    <meta property="og:description" content="Website resmi kelas XI.7 Askarasapta SMA Negeri 1 Cluring - Portal informasi, tugas, dan kegiatan kelas">
     <meta property="og:image" content="https://i.ibb.co.com/7MsXfrF/1-logo-kelas-256x256.webp">
     <meta property="og:url" content="https://askarasapta.com">
     <meta name="twitter:card" content="summary_large_image">
@@ -33,21 +33,18 @@
             --warning: #ff9800;
             --danger: #f44336;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         body {
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.7;
             overflow-x: hidden;
         }
-
         /* Skip to main content for accessibility */
         .skip-link {
             position: absolute;
@@ -60,11 +57,9 @@
             text-decoration: none;
             border-radius: 0 0 4px 0;
         }
-
         .skip-link:focus {
             top: 0;
         }
-
         /* Header dengan Emas & Budaya */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -74,13 +69,11 @@
             box-shadow: 0 8px 30px rgba(67, 97, 238, 0.25);
             border-bottom: 2px solid var(--gold);
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         .header-content {
             display: flex;
             align-items: center;
@@ -88,13 +81,11 @@
             flex-wrap: wrap;
             gap: 1.5rem;
         }
-
         .logo-brand {
             display: flex;
             align-items: center;
             gap: 1.2rem;
         }
-
         .logo {
             width: 70px;
             height: 70px;
@@ -104,11 +95,9 @@
             box-shadow: 0 0 0 4px var(--gold), 0 6px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-
         .logo:hover {
             transform: scale(1.08);
         }
-
         .brand-text h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -117,7 +106,6 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
             letter-spacing: -0.5px;
         }
-
         .brand-text h1::after {
             content: '';
             display: block;
@@ -126,7 +114,6 @@
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
             margin: 6px 0 0;
         }
-
         .brand-text p {
             font-size: 0.95rem;
             opacity: 0.95;
@@ -135,11 +122,9 @@
             gap: 0.6rem;
             margin-top: 4px;
         }
-
         .brand-text p i {
             color: var(--gold);
         }
-
         .live-date {
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
@@ -152,22 +137,18 @@
             border: 1px solid rgba(255,255,255,0.3);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
         .live-date i {
             color: var(--gold);
             animation: pulse-gold 2s infinite;
         }
-
         @keyframes pulse-gold {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.7; transform: scale(1.1); }
         }
-
         nav {
             display: flex;
             gap: 2rem;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -177,7 +158,6 @@
             padding: 0.5rem 0;
             transition: color 0.3s ease;
         }
-
         nav a::after {
             content: '';
             position: absolute;
@@ -188,15 +168,12 @@
             background: var(--gold);
             transition: width 0.4s ease;
         }
-
         nav a:hover {
             color: var(--accent);
         }
-
         nav a:hover::after {
             width: 60%;
         }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -206,14 +183,12 @@
             cursor: pointer;
             z-index: 1001;
         }
-
         /* Video Section (Mengganti Hero) */
         .video-section {
             padding: 4rem 0;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(63, 55, 201, 0.08));
             text-align: center;
         }
-
         .video-container {
             position: relative;
             max-width: 900px;
@@ -222,14 +197,12 @@
             overflow: hidden;
             box-shadow: var(--shadow-hover);
         }
-
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
         }
-
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -238,19 +211,16 @@
             height: 100%;
             border: none;
         }
-
         .video-caption {
             margin-top: 1.5rem;
             color: var(--dark);
             font-style: italic;
         }
-
         /* Section Title */
         .section-title {
             text-align: center;
             margin-bottom: 3.5rem;
         }
-
         .section-title h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.3rem;
@@ -259,7 +229,6 @@
             display: inline-block;
             padding-bottom: 0.7rem;
         }
-
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -271,21 +240,18 @@
             background: linear-gradient(90deg, var(--primary), var(--gold), var(--accent));
             border-radius: 2px;
         }
-
         .section-title p {
             color: #555;
             max-width: 750px;
             margin: 0.8rem auto 0;
             font-size: 1.05rem;
         }
-
         /* Info Cards */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.2rem;
         }
-
         .info-card {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
@@ -294,13 +260,11 @@
             transition: all 0.4s ease;
             border: 1px solid #f0f0f0;
         }
-
         .info-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
             border-color: var(--gold);
         }
-
         .card-header {
             height: 130px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -310,7 +274,6 @@
             justify-content: center;
             color: white;
         }
-
         .card-header i {
             font-size: 3.5rem;
             opacity: 0.15;
@@ -319,7 +282,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
         .card-icon {
             width: 70px;
             height: 70px;
@@ -335,28 +297,23 @@
             z-index: 2;
             border: 2px solid var(--gold);
         }
-
         .card-body {
             padding: 1.8rem;
         }
-
         .card-body h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             margin-bottom: 0.6rem;
             color: var(--dark);
         }
-
         .card-body p {
             color: #666;
             font-size: 0.98rem;
             line-height: 1.6;
         }
-
         .card-footer {
             padding: 0 1.8rem 1.8rem;
         }
-
         /* Jadwal Piket */
         .schedule-container {
             background: white;
@@ -366,18 +323,15 @@
             margin: 2rem auto;
             max-width: 800px;
         }
-
         .schedule-day {
             border-bottom: 1px solid #f0f0f0;
             padding: 1rem 1.5rem;
             transition: background 0.3s ease;
             position: relative;
         }
-
         .schedule-day.active {
             background-color: rgba(76, 201, 240, 0.1);
         }
-
         .schedule-day.active::before {
             content: '';
             position: absolute;
@@ -387,15 +341,12 @@
             width: 4px;
             background: var(--accent);
         }
-
         .schedule-day:last-child {
             border-bottom: none;
         }
-
         .schedule-day:hover {
             background-color: #f9f9ff;
         }
-
         .schedule-day h3 {
             color: var(--primary);
             margin-bottom: 0.8rem;
@@ -403,17 +354,14 @@
             align-items: center;
             gap: 0.6rem;
         }
-
         .schedule-day h3 i {
             color: var(--gold);
         }
-
         .schedule-names {
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem;
         }
-
         .name-tag {
             background: linear-gradient(135deg, #f0f4ff, #e6eeff);
             color: var(--secondary);
@@ -424,74 +372,12 @@
             border: 1px solid #e0e7ff;
             transition: all 0.3s ease;
         }
-
         .name-tag:hover {
             background: var(--primary);
             color: white;
             transform: scale(1.05);
             border-color: var(--gold);
         }
-
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.8rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            height: 220px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            opacity: 1;
-        }
-
-        .gallery-caption h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .gallery-caption p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
         /* Tugas Section */
         .tasks-container {
             background: white;
@@ -501,7 +387,6 @@
             margin: 2rem auto;
             max-width: 1000px;
         }
-
         .task-filters {
             display: flex;
             gap: 1rem;
@@ -509,13 +394,11 @@
             border-bottom: 1px solid #f0f0f0;
             flex-wrap: wrap;
         }
-
         .task-search {
             display: flex;
             margin-left: auto;
             position: relative;
         }
-
         .task-search input {
             padding: 0.5rem 1rem 0.5rem 2.5rem;
             border-radius: 50px;
@@ -523,7 +406,6 @@
             font-size: 0.9rem;
             width: 200px;
         }
-
         .task-search i {
             position: absolute;
             left: 12px;
@@ -531,7 +413,6 @@
             transform: translateY(-50%);
             color: #999;
         }
-
         .filter-btn {
             padding: 0.5rem 1rem;
             border-radius: 50px;
@@ -540,17 +421,14 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .filter-btn.active, .filter-btn:hover {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
-
         .tasks-list {
             padding: 0;
         }
-
         .task-item {
             padding: 1.5rem;
             border-bottom: 1px solid #f0f0f0;
@@ -559,19 +437,15 @@
             justify-content: space-between;
             transition: background 0.3s ease;
         }
-
         .task-item:last-child {
             border-bottom: none;
         }
-
         .task-item:hover {
             background-color: #f9f9ff;
         }
-
         .task-info {
             flex: 1;
         }
-
         .task-title {
             font-weight: 600;
             margin-bottom: 0.4rem;
@@ -579,25 +453,21 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .task-subject {
             font-size: 0.9rem;
             color: #666;
             margin-bottom: 0.5rem;
         }
-
         .task-deadline {
             font-size: 0.85rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
-
         .task-actions {
             display: flex;
             gap: 0.8rem;
         }
-
         .task-btn {
             padding: 0.5rem 1rem;
             border-radius: 50px;
@@ -606,39 +476,32 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
         }
-
         .btn-detail {
             background: #e6eeff;
             color: var(--primary);
         }
-
         .btn-detail:hover {
             background: var(--primary);
             color: white;
         }
-
         .status-badge {
             padding: 0.3rem 0.8rem;
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 500;
         }
-
         .status-pending {
             background: #fff4e5;
             color: var(--warning);
         }
-
         .status-completed {
             background: #e6f4ea;
             color: var(--success);
         }
-
         .status-urgent {
             background: #fce8e6;
             color: var(--danger);
         }
-
         /* Footer */
         footer {
             background: linear-gradient(135deg, var(--dark), #0f0f1a);
@@ -646,7 +509,6 @@
             padding: 3.5rem 0 1.8rem;
             border-top: 3px solid var(--gold);
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -655,14 +517,12 @@
             position: relative;
             z-index: 2;
         }
-
         .footer-column h3 {
             position: relative;
             padding-bottom: 0.6rem;
             margin-bottom: 1.2rem;
             display: inline-block;
         }
-
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -672,15 +532,12 @@
             height: 2px;
             background: var(--gold);
         }
-
         .footer-links {
             list-style: none;
         }
-
         .footer-links li {
             margin-bottom: 0.7rem;
         }
-
         .footer-links a {
             color: #ddd;
             text-decoration: none;
@@ -689,11 +546,9 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .footer-links a:hover {
             color: var(--accent);
         }
-
         .social-media {
             display: flex;
             gap: 0.8rem;
@@ -701,7 +556,6 @@
             position: relative;
             z-index: 2;
         }
-
         .social-media a {
             width: 40px;
             height: 40px;
@@ -714,13 +568,11 @@
             border: 1px solid rgba(255,255,255,0.2);
             transition: all 0.3s ease;
         }
-
         .social-media a:hover {
             background-color: var(--gold);
             border-color: var(--gold);
             transform: translateY(-3px);
         }
-
         .footer-bottom {
             text-align: center;
             padding-top: 1.5rem;
@@ -728,7 +580,6 @@
             position: relative;
             z-index: 2;
         }
-
         /* Back to Top */
         .back-to-top {
             position: fixed;
@@ -751,18 +602,15 @@
             z-index: 999;
             border: 2px solid var(--gold);
         }
-
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
         }
-
         .back-to-top:hover {
             background: linear-gradient(135deg, var(--secondary), #3a30b0);
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
-
         /* Loading spinner for images */
         .image-loading {
             background: #f0f0f0;
@@ -770,7 +618,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .spinner {
             width: 40px;
             height: 40px;
@@ -779,11 +626,9 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
         /* Responsive */
         @media (max-width: 992px) {
             .task-search {
@@ -791,12 +636,10 @@
                 width: 100%;
                 margin: 0 0 1rem 0;
             }
-            
             .task-search input {
                 width: 100%;
             }
         }
-
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
@@ -804,7 +647,6 @@
                 top: 1.5rem;
                 right: 2rem;
             }
-            
             nav {
                 position: fixed;
                 top: 0;
@@ -819,11 +661,9 @@
                 z-index: 1000;
                 border-radius: 16px 0 0 16px;
             }
-            
             nav.active {
                 right: 0;
             }
-            
             .mobile-menu-close {
                 position: absolute;
                 top: 1.5rem;
@@ -834,51 +674,40 @@
                 border: none;
                 cursor: pointer;
             }
-            
             .cta-button {
                 margin: 0.5rem 0;
             }
-            
             .cta-button.secondary {
                 margin-left: 0;
             }
-            
             .task-item {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1rem;
             }
-            
             .task-actions {
                 align-self: flex-end;
             }
-            
             .footer-content {
                 grid-template-columns: 1fr;
             }
-
             .video-container {
                 margin: 0 1rem;
             }
         }
-
         @media (max-width: 576px) {
             .container {
                 padding: 0 1.2rem;
             }
-            
             .brand-text h1 {
                 font-size: 1.7rem;
             }
-            
             .task-filters {
                 justify-content: center;
             }
-            
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
             .back-to-top {
                 bottom: 1.5rem;
                 right: 1.5rem;
@@ -890,10 +719,8 @@
     </style>
 </head>
 <body>
-
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
     <!-- Header -->
     <header>
         <div class="container">
@@ -920,7 +747,8 @@
                     <a href="#about">Tentang</a>
                     <a href="#schedule">Jadwal Piket</a>
                     <a href="#tasks">Tugas</a>
-                    <a href="#gallery">Galeri</a>
+                    <!-- LINK GALERI DIARAHKAN KE FILE BARU -->
+                    <a href="Galery-XI.7.html">Galeri</a>
                     <a href="XI.7-Askarasapta.html">Siswa</a>
                     <a href="#contact">Kontak</a>
                     <a href="Alat_Konversi_Foto.html">Konversi Foto</a>
@@ -928,7 +756,6 @@
             </div>
         </div>
     </header>
-
     <!-- Video Section (Mengganti Hero) -->
     <section class="video-section" id="home">
         <div class="container">
@@ -944,7 +771,6 @@
             </div>
         </div>
     </section>
-
     <!-- About -->
     <section class="section" id="about">
         <div class="container">
@@ -1015,7 +841,6 @@
             </div>
         </div>
     </section>
-
     <!-- Jadwal Piket -->
     <section class="section" id="schedule">
         <div class="container">
@@ -1086,7 +911,6 @@
             </div>
         </div>
     </section>
-
     <!-- Tugas Section -->
     <section class="section" id="tasks">
         <div class="container">
@@ -1179,84 +1003,6 @@
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="section" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Galeri Kegiatan</h2>
-                <p>Momen-momen berharga yang kami abadikan selama kegiatan belajar dan aktivitas kelas.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/1f6NhMv4/KEBERSIHAN-KELAS-1.jpg" alt="Kegiatan Kebersihan Kelas">
-                    <div class="gallery-caption">
-                        <h4>Kebersihan Kelas</h4>
-                        <p>Kegiatan gotong royong membersihkan ruang kelas</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/1Gc5WtTt/PEMBIASAN-PAGI.jpg" alt="Kegiatan Pembiasaan Pagi">
-                    <div class="gallery-caption">
-                        <h4>Pembiasaan Pagi</h4>
-                        <p>Kegiatan rutin pembiasaan pagi sebelum pembelajaran</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/rG1s9MgV/AL-QUR-AN-DIGITAL.jpg" alt="Kegiatan Al-Qur'an Digital">
-                    <div class="gallery-caption">
-                        <h4>Al-Qur'an Digital</h4>
-                        <p>Pemanfaatan teknologi digital dalam pembelajaran Al-Qur'an</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/Dg61Xd3M/2-Foto-kelas-800x600.webp" alt="Foto Kelas XI.7 Askarasapta">
-                    <div class="gallery-caption">
-                        <h4>Foto Kelas</h4>
-                        <p>Bersama wali kelas và seluruh anggota XI.7</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/tpQDty81/3-Makan-bersama-400x300.webp" alt="Kegiatan Makan Bersama Kelas XI.7">
-                    <div class="gallery-caption">
-                        <h4>Jumat Berkah</h4>
-                        <p>Makan bersama setelah kegiatan sosial</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/WNK5fyJB/4-makan-bersama-400x300.webp" alt="Kegiatan Senam Kelas XI.7">
-                    <div class="gallery-caption">
-                        <h4>Senam Sehat</h4>
-                        <p>Senam pagi bersama sebelum belajar</p>
-                    </div>
-                </div>
-                <!-- Foto Baru 1 -->
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/N2N5HM9S/PERINGATAN-MAULID-NABI-SAW.jpg" alt="Peringatan Maulid Nabi SAW">
-                    <div class="gallery-caption">
-                        <h4>Peringatan Maulid Nabi</h4>
-                        <p>Kegiatan peringatan Maulid Nabi Muhammad SAW</p>
-                    </div>
-                </div>
-                <!-- Foto Baru 2 -->
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/DPNkNTyS/LOMBA-HADRAH.jpg" alt="Lomba Hadrah">
-                    <div class="gallery-caption">
-                        <h4>Lomba Hadrah</h4>
-                        <p>Penampilan hadrah dalam rangka memperingati Maulid Nabi</p>
-                    </div>
-                </div>
-                <!-- Foto Baru 3 -->
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co.com/SD0c6NGm/JUM-AT-BERSIH.jpg" alt="Jumat Bersih">
-                    <div class="gallery-caption">
-                        <h4>Jumat Bersih</h4>
-                        <p>Kegiatan Jumat bersih di lingkungan sekolah</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -1278,7 +1024,8 @@
                         <li><a href="#about"><i class="fas fa-chevron-right"></i> Tentang</a></li>
                         <li><a href="#schedule"><i class="fas fa-chevron-right"></i> Jadwal Piket</a></li>
                         <li><a href="#tasks"><i class="fas fa-chevron-right"></i> Tugas</a></li>
-                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+                        <!-- LINK GALERI DIARAHKAN KE FILE BARU -->
+                        <li><a href="Galery-XI.7.html"><i class="fas fa-chevron-right"></i> Galeri</a></li>
                         <li><a href="XI.7-Askarasapta.html"><i class="fas fa-chevron-right"></i> Siswa</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Kontak</a></li>
                         <li><a href="Alat_Konversi_Foto.html"><i class="fas fa-chevron-right"></i> Konversi Foto</a></li>
@@ -1299,17 +1046,14 @@
             </div>
         </div>
     </footer>
-
     <!-- Back to Top -->
     <div class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
         <i class="fas fa-arrow-up"></i>
     </div>
-
     <!-- Script -->
     <script>
         // Set main content ID for accessibility
         document.getElementById('about').setAttribute('id', 'main-content');
-        
         // Date and time functionality
         function updateDateTime() {
             const now = new Date();
@@ -1318,23 +1062,19 @@
                 hour: '2-digit', minute: '2-digit'
             };
             document.getElementById('current-date').textContent = now.toLocaleDateString('id-ID', options);
-            
             // Highlight current day in schedule
             const dayIndex = now.getDay();
             const dayMap = {1: 'monday', 2: 'tuesday', 3: 'wednesday', 4: 'thursday', 5: 'friday'};
             const today = dayMap[dayIndex];
-            
             if (today) {
                 // Remove active class from all days
                 document.querySelectorAll('.schedule-day').forEach(day => {
                     day.classList.remove('active');
                 });
-                
                 // Add active class to current day
                 const currentDayElement = document.getElementById(`schedule-${today}`);
                 if (currentDayElement) {
                     currentDayElement.classList.add('active');
-                    
                     // Scroll to current day if on schedule section
                     if (window.location.hash === '#schedule') {
                         setTimeout(() => {
@@ -1344,7 +1084,6 @@
                 }
             }
         }
-        
         // Back to top functionality
         function setupBackToTop() {
             const backToTopBtn = document.getElementById('backToTop');
@@ -1359,23 +1098,19 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
-        
         // Mobile menu functionality
         function setupMobileMenu() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenuClose = document.getElementById('mobileMenuClose');
             const mainNav = document.getElementById('mainNav');
-
             mobileMenuBtn.addEventListener('click', () => {
                 mainNav.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
-
             mobileMenuClose.addEventListener('click', () => {
                 mainNav.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
-
             document.querySelectorAll('nav a').forEach(link => {
                 link.addEventListener('click', () => {
                     mainNav.classList.remove('active');
@@ -1383,7 +1118,6 @@
                 });
             });
         }
-        
         // Smooth scrolling for anchor links
         function setupSmoothScrolling() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1396,22 +1130,17 @@
                 });
             });
         }
-        
         // Task filtering functionality
         function setupTaskFiltering() {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const taskItems = document.querySelectorAll('.task-item');
-
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
                     // Add active class to clicked button
                     button.classList.add('active');
-                    
                     const filter = button.getAttribute('data-filter');
-                    
                     taskItems.forEach(item => {
                         if (filter === 'all') {
                             item.style.display = 'flex';
@@ -1432,19 +1161,15 @@
                 });
             });
         }
-        
         // Task search functionality
         function setupTaskSearch() {
             const taskSearch = document.getElementById('taskSearch');
             const taskItems = document.querySelectorAll('.task-item');
-            
             taskSearch.addEventListener('keyup', () => {
                 const searchTerm = taskSearch.value.toLowerCase();
-                
                 taskItems.forEach(item => {
                     const title = item.querySelector('.task-title span').textContent.toLowerCase();
                     const subject = item.querySelector('.task-subject').textContent.toLowerCase();
-                    
                     if (title.includes(searchTerm) || subject.includes(searchTerm)) {
                         item.style.display = 'flex';
                     } else {
@@ -1453,25 +1178,23 @@
                 });
             });
         }
-        
         // Task detail buttons
         function setupTaskDetails() {
             const detailButtons = document.querySelectorAll('.btn-detail');
             detailButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const taskTitle = button.closest('.task-item').querySelector('.task-title span').textContent;
-                    alert(`Detail untuk tugas: ${taskTitle}\n\nFitur detail tugas akan segera diluncurkan!`);
+                    alert(`Detail untuk tugas: ${taskTitle}
+Fitur detail tugas akan segera diluncurkan!`);
                 });
             });
         }
-        
-        // Lazy loading for images
+        // Lazy loading for images (dihapus karena galeri sudah dihapus, tapi script ini tidak mengganggu)
         function setupLazyLoading() {
             document.addEventListener('DOMContentLoaded', function() {
                 const lazyImages = document.querySelectorAll('.gallery-item img');
-                
                 if ('IntersectionObserver' in window) {
-                    const imageObserver = new IntersectionObserver((entries, observer) {
+                    const imageObserver = new IntersectionObserver((entries, observer) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
                                 const img = entry.target;
@@ -1481,7 +1204,6 @@
                             }
                         });
                     });
-                    
                     lazyImages.forEach(img => {
                         img.classList.add('image-loading');
                         imageObserver.observe(img);
@@ -1494,21 +1216,18 @@
                 }
             });
         }
-        
         // Initialize all functionality when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             updateDateTime();
             setInterval(updateDateTime, 60000);
-            
             setupBackToTop();
             setupMobileMenu();
             setupSmoothScrolling();
             setupTaskFiltering();
             setupTaskSearch();
             setupTaskDetails();
-            setupLazyLoading();
+            setupLazyLoading(); // Tetap dijalankan, tidak masalah meskipun tidak ada elemen .gallery-item
         });
     </script>
-
 </body>
 </html>
